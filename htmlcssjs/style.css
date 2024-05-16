@@ -1,0 +1,400 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+}
+
+main{
+    display: grid;
+    grid-template-columns: 300px 1fr;
+}
+
+li {
+    height:80px;
+    margin-top:3px;
+}
+
+
+
+.settings{
+    padding-top:10px;
+    height: 95vh;
+    position:relative;
+}
+
+.parameters{
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap:0px;
+}
+
+.game-window{
+    width: 100%;
+    background-color: #4b453f;
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(12,1fr);
+    row-gap: 1px;
+    column-gap: 1px;
+}
+
+.shadedText{
+    color: white;
+    text-shadow:
+        2px 0 3px rgba(20,20,20,0.8),
+        -2px 0 3px rgba(20,20,20,0.8),
+        0 -2px 3px rgba(20,20,20,0.8),
+        0 2px 3px rgba(20,20,20,0.8);
+}
+
+.text{
+    display:block;
+    width:90%;
+    height:100%;
+    margin-left:10%;
+    text-align: center;
+    color: white;
+    font-size: 1.6rem;
+    background-color: rgba(0,0,0,.3);
+    border-radius:.4em;
+    border:solid 2px rgba(0,0,0,.5);
+
+}
+.createInput{
+    position:relative;
+    z-index:10;
+    height:40px;
+}
+
+.color-time{
+    overflow-x: clip;
+    overflow-y: visible;
+}
+
+.widthCell{
+    height: 55px;
+    grid-column: 1/3;
+}
+
+.tripleCell{
+    display:grid;
+    grid-template-columns: 2fr 3fr 2fr;
+    position:relative;
+    top:60px;
+}
+
+.inputField-number{
+    display:block;
+    margin:auto;
+    border:none;
+    font-size: 1.5rem;
+    text-align: center;
+    cursor:inherit;
+    width: 40%;
+    height:100%;
+    outline: none;
+    border-radius: 50%;
+    background-color: rgba(20,20,20,.6);
+    transition:.3s, border 0s;
+    border: 2px solid rgba(10, 180, 180, 1);
+}
+li:hover > .inputField-number, .inputField-number:hover, .inputField-number:focus{
+    width:90%;
+    border-radius: 0.4em;
+    background-color: rgba(20,20,20,.8);
+}
+
+.rainbow{
+    position:relative;
+    z-index:8;
+    top: -40px;
+    display:block;
+    text-align: center;
+    margin-top:0;
+    border: none;
+    border-left: 70px solid transparent;
+    border-right: 70px solid transparent;
+    border-top: 50px solid;
+    transition: .3s;
+    font-size: 1.5rem;
+
+    margin-left:-115px;
+    width: 400px;
+    height: 130px;
+    padding-bottom:20px;
+    border-radius: 50%;
+    opacity:0.55;
+
+}
+
+.inputField-time:hover + .rainbow, .inputField-time:focus + .rainbow{
+    margin-left:107px;
+    width:80px;
+    height:30px;
+    padding-left: 0;
+    padding-right: 0;
+    border-radius: 100%;
+    opacity:0.7;
+}
+
+.inputField-time{
+    position:relative;
+    z-index:100;
+    top:15px;
+    display:block;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+    height:110%;
+    border: none;
+    background: rgba(0,0,0,0);
+    transition: .4s;
+    cursor:inherit;
+    font-size: 1.5rem;
+    outline:none;
+}
+
+.inputField-time:hover{
+    background: linear-gradient(0deg, rgba(255,255,255,0), rgba(255,255,255,.4), rgba(0,0,0,0));
+    border-radius:1em;
+}
+
+.inputButton{
+    display:block;
+    width:60%;
+    height:100%;
+    border: 1px solid rgba(10, 180, 180, 1);
+    background: rgba(20, 20, 20, .6);
+    font-size: 18px;
+    color: white;
+    margin:auto;
+    margin-bottom:10px;
+    padding: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
+    border-radius:0.3em;
+    transition: .4s;
+    position:relative;
+    cursor:inherit;
+    z-index:10;
+    outline:none;   
+
+}
+li:hover > .inputButton, .inputButton:hover, .inputButton:focus{
+    background: rgba(20, 20, 20, .8);
+    width: 100%;
+    border-radius:2em;
+}
+
+   
+
+
+.eraser-label {
+    display: block;
+    position:relative;
+    margin:auto;
+    width: 100%;
+    height: 80px;
+    background: url('./image/eraser/eraseroff.png'), linear-gradient(rgba(20, 20, 20, .2),rgba(20, 20, 20, .2));
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: inherit;
+    border-radius: 10px;
+    transition: 0.3s ease;
+    border: solid 1px;
+    position:relative;
+    z-index:10;
+}
+
+.eraser {
+    display: none;
+}
+
+.eraser-label:hover{
+    background: url('./image/eraser/erasero.png'), linear-gradient(rgba(20, 20, 20, .2),rgba(20, 20, 20, .2));
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    outline: none;
+}
+
+.eraser:checked + .eraser-label{
+    border: solid 1px;
+    border-radius: 1em;
+    background: url('./image/eraser/eraserempty.png'), conic-gradient(
+    rgba(128, 0, 128, 0.7), rgba(0, 0, 255, 0.7),
+    rgba(0, 128, 0, 0.7), rgba(255, 255, 0, 0.7),
+    rgba(255, 0, 0, 0.7), rgba(128, 0, 128, 0.7));
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: borderAnimation 10s infinite;
+    outline: none;
+}
+
+@keyframes borderAnimation {
+  0%{border-color: red; box-shadow: 0 0 10px red;}
+  14.28%{border-color: orange; box-shadow: 0 0 10px orange);}
+  28.56%{border-color: yellow; box-shadow: 0 0 10px yellow;}
+  42.84%{border-color: green; box-shadow: 0 0 10px green;}
+  57.12%{border-color: aqua; box-shadow: 0 0 10px aqua;}
+  71.4%{border-color: blue; box-shadow: 0 0 10px blue;}
+  85.68%{border-color: purple; box-shadow: 0 0 10px purple;}
+  100%{border-color: red; box-shadow: 0 0 10px red;}
+}
+
+img{
+    position:absolute;
+    transform: scale(-1, 1)
+}
+
+.fox{
+    z-index:1001;
+}
+
+#foxBody{
+    width:120px;
+    position:absolute;
+    bottom:-30px;
+    left: 55px;
+    z-index:1001;
+}
+#foxTail{
+    height:120px;
+    position:absolute;
+    bottom:50px;
+    left: 35px;
+    z-index:1002;
+}
+#foxHead{
+    width:90px;
+    position:absolute;
+    bottom: 30px;
+    left:120px;
+    z-index:1003;
+}
+
+.grass{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:5.9vh;
+    background: url('./image/background/grass.png');
+    background-size: 80% 100%;
+    background-repeat: repeat-x;
+    animation: grassAnim 15s linear infinite;
+    z-index:10;
+}
+@keyframes grassAnim{
+    0%{background-position:  1523px, 0%;}
+    100%{background-position:  0px, 0%;}
+}
+
+.water{
+    position:absolute;
+    bottom:4vh;
+    width:300px;
+    height:10vh;
+    background: url('./image/background/water.png');
+    background-size: cover;
+    background-repeat: repeat-x;
+    animation: waterAnim 80s linear infinite;
+    z-index:9;
+}
+@keyframes waterAnim{
+    0%{background-position: 301px, 0;}
+    100%{background-position:100%, 0;}
+}
+
+.sky{
+    position:absolute;
+    bottom:12vh;
+    width:300px;
+    height:95vh;
+    background: url('./image/background/sky.png');
+    background-size: cover;
+    background-repeat: repeat-x;
+    z-index:7;
+    animation: skyAnim 600s linear infinite;
+}
+@keyframes skyAnim{
+    0%{background-position: 301px, 0;}
+    100%{background-position:100%, 0;}
+}
+
+#sky_TargetBox_1{
+    width:100%;
+    height:100%;
+    z-index:1001;
+}
+#sky_TargetBox_2{
+    width:100%;
+    height:100%;
+    z-index:1001;
+}
+
+
+
+
+
+.red{
+    border-top-color:red;
+}
+ .inputField-time:hover + .red, .inputField-time:focus + .red{
+    border: 2px solid red;
+    background-color:red;
+}
+.orange{
+    border-top-color:orange;
+}
+ .inputField-time:hover + .orange, .inputField-time:focus + .orange{
+    border: 2px solid orange;
+    background-color:orange;
+}
+.yellow{
+    border-top-color:yellow;
+}
+ .inputField-time:hover + .yellow, .inputField-time:focus + .yellow{
+    border: 2px solid yellow;
+    background-color:yellow;
+}
+.green{
+    border-top-color:green;
+}
+ .inputField-time:hover + .green, .inputField-time:focus + .green{
+    border: 2px solid green;
+    background-color:green;
+}
+.aqua{
+    border-top-color:aqua;
+}
+ .inputField-time:hover + .aqua, .inputField-time:focus + .aqua{
+    border: 2px solid aqua;
+    background-color:aqua;
+}
+.blue{
+    border-top-color:blue;
+}
+ .inputField-time:hover + .blue, .inputField-time:focus + .blue{
+    border: 2px solid blue;
+    background-color:blue;
+}
+.purple{
+    border-top-color:purple;
+}
+.inputField-time:hover + .purple, .inputField-time:focus + .purple{
+    border: 2px solid purple;
+    background-color:purple;
+}

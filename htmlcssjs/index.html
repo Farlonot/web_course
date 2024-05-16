@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts.js"></script>
+    <title>Color GAME</title>
+</head>
+<body>
+
+    <main>
+        <div class="settings">
+            <ol class="parameters">
+
+                <li class="text createInput shadedText" id="text_columns" onclick="eraseBgColor(this.id)">
+                        Столбцы:
+                </li>
+                <li class="createInput">
+                    <input type="number" class="inputField-number shadedText" name="number_columns" id="number_columns" min="1" max="30" value="20" onclick="eraseBgColor(this.id)">
+                </li>
+                <li class="text createInput shadedText" id="text_rows" onclick="eraseBgColor(this.id)">
+                        Строки:
+                </li>
+                <li class="createInput">
+                    <input type="number" class="inputField-number shadedText" name="number_rows" id="number_rows" min="1" max="30" value="12" onclick="eraseBgColor(this.id)">
+                </li>
+                <li class="widthCell createInput">
+                    <input type="button" checked="true" class="inputButton shadedText" name="create_button" id="create_button" value="Создать" onclick="createButton(this)">
+                </li>
+
+
+                <li class="color-time widthCell">
+                    <input type="number" class="inputField-time shadedText" name="change_white_red" id="change_0" min="0" value="2" onchange="setColorTime(this.id)" onclick="eraseRainbow(this.id)">
+                    <div class="red rainbow"></div>
+                </li>
+                <li class="color-time widthCell">
+                    <input type="number" class="inputField-time shadedText" name="change_red_orange" id="change_1" min="0" value="2" onchange="setColorTime(this.id)" onclick="eraseRainbow(this.id)">
+                    <div class="orange rainbow"></div>
+                </li>
+                <li class="color-time widthCell">
+                        <input type="number" class="inputField-time shadedText" name="change_orange_yellow" id="change_2" min="0" value="2" onchange="setColorTime(this.id)" onclick="eraseRainbow(this.id)">
+                    <div class="yellow rainbow"></div>
+                </li>
+                <li class="color-time widthCell">
+                        <input type="number" class="inputField-time shadedText" name="change_yellow_green" id="change_3" min="0" value="2" onchange="setColorTime(this.id)" onclick="eraseRainbow(this.id)">
+                    <div class="green rainbow"></div>
+                </li>
+                <li class="color-time widthCell">
+                        <input type="number" class="inputField-time shadedText" name="change_green_sky" id="change_4" min="0" value="2" onchange="setColorTime(this.id)" onclick="eraseRainbow(this.id)">
+                    <div class="aqua rainbow"></div>
+                </li>
+                <li class="color-time widthCell">
+                        <input type="number" class="inputField-time shadedText" name="change_sky_blue" id="change_5" min="0" value="2" onchange="setColorTime(this.id)" onclick="eraseRainbow(this.id)">
+                    <div class="blue rainbow"></div>
+                </li>
+                <li class="color-time widthCell">
+                        <input type="number" class="inputField-time shadedText" name="change_blue_purple" id="change_6" min="0" value="2" onchange="setColorTime(this.id)" onclick="eraseRainbow(this.id)">
+                    <div class="purple rainbow"></div>
+                </li>
+                <li class="widthCell tripleCell">
+
+                    <div id="sky_TargetBox_1" onclick="eraseSky()"></div>
+                    <div>
+                        <input type="checkbox" class="eraser"  id="eraser" name="eraser" onclick="checkBoxUpdate(this.checked)"/>
+                        <label for="eraser" title="Трансластик" class="eraser-label"></label>
+                    </div>
+                    <div id="sky_TargetBox_2" onclick="eraseSky()"></div>
+                </li>
+            </ol>
+            
+            <figure>
+                <img class="fox" src="./image/fox/body.gif"  id="foxBody" tabindex="-1" onclick="eraseFromHtmlById(this.id)">
+            </figure>
+            <figure>
+                <img class="fox" src="./image/fox/tail.gif"  id="foxTail" tabindex="-1" onclick="eraseFromHtmlById(this.id)">
+            </figure>
+            <figure>
+                <img class="fox" src="./image/fox/head.gif"  id="foxHead" tabindex="-1" onclick="eraseFromHtmlById(this.id)">
+            </figure>
+
+        </div>
+        <article class="game-window area-grid-game-window" id="game-window">
+            <script>
+                //setBgGradient()
+                setAllColorsTime()
+                createBoxArray()
+            </script>
+        </article>
+    </main>
+        <div class="grass" id="grass" onclick="eraseFromHtmlById(this.id)"></div>
+        <div class="water" id="water" onclick="eraseFromHtmlById(this.id)"></div>
+        <div class="sky" id="sky" onclick="eraseFromHtmlById(this.id)"></div>
+
+</body>
+</html>

@@ -1,0 +1,120 @@
+* {padding: 0; margin: 0}
+
+
+.header-grid{
+    z-index:1;
+    top:0;
+    position:sticky;
+    width: 100%;
+    background-color:var(--header-dark);
+    display: grid;
+	grid-template-columns: 1fr 4fr ;
+	grid-auto-rows: minmax(100px, auto);
+    grid-gap: 3px;
+}
+
+.nav-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 3px;
+    font-size: 30px;
+    text-align:center;
+    color: white;
+    font-family: "Segoe UI",Helvetica,Arial,sans-serif;
+    font-weight: 400;
+}
+
+
+.main-container {
+    width: 100%;
+	display: grid;
+	grid-template-columns: 1fr ;
+	grid-auto-rows:auto ;
+	grid-gap: 1em;
+}
+
+.box3 {
+	grid-column: auto;
+	grid-row: auto;
+}
+.local-source:target {
+    padding-top: 120px;
+    margin-top: -120px;
+}
+
+
+.ad-grid{
+    background-color: var(--background-light);
+	border: .3rem solid var(--background-light);
+	border-radius: .6em;
+	display:grid;
+	grid-template-columns: 1fr;
+	grid-auto-rows: min-content;
+	grid-gap:20px;
+	place-items:center ;
+}
+.ad-grid figure{
+    width:80%;
+    place-items: center;
+}
+.ad-grid a{
+    display:grid;
+    place-items: center;
+    width: 100%;
+}
+.ad-grid img{
+    width: 100%;
+}
+
+
+.section-container{
+
+    margin:0;
+    padding: 0 2% 0 1%;
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items:start;
+    justify-items:start;
+    grid-gap:20px
+}
+
+section, .usual-section{
+    grid-column: 1/3;
+    margin:0;
+    background-color:var(--background-light);
+    border-radius:.6em;
+    padding: .4em .4em .4em .4em;
+    place:center;
+    text-align: center;
+    font-family: "Segoe UI",Helvetica,Arial,sans-serif;
+    font-size: 20px;
+    font-weight:400;
+}
+section p{
+    padding-right:4%;
+    padding-left:4%;
+    padding-bottom:1em;
+    font-size: 18px;
+}
+
+section > h1{
+    font-size: 30px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    line-height: 1.2em;
+}
+
+section > h2{
+    font-size: 25px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    line-height: 1.2em;
+}
+
+
+.bg-ml{
+    background-color:var(--background-medium-light);
+}
+.bg-none{
+    background-color: inherit;
+}
